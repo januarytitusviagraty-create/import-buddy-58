@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 declare global {
@@ -15,6 +16,23 @@ const handleVipClick = () => {
 };
 
 const Index = () => {
+  const [isAllowed, setIsAllowed] = useState(false);
+  const [checking, setChecking] = useState(true);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('lead') === 'true') {
+      setIsAllowed(true);
+      setChecking(false);
+    } else {
+      window.location.href = 'https://www.google.com';
+    }
+  }, []);
+
+  if (checking || !isAllowed) {
+    return null;
+  }
+
   return (
     <div className="bg-gw-light-bg min-h-screen font-['Roboto',sans-serif]">
       {/* HEADER */}
