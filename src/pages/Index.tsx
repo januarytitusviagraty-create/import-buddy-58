@@ -6,7 +6,7 @@ declare global {
     fbq: (...args: any[]) => void;
   }
 }
-const WHATSAPP_LINK = 'https://chat.whatsapp.com/GE0IPcBRSbQ7EpSePZm3xu';
+const WHATSAPP_LINK = 'https://chat.whatsapp.com/CTGrdLLacdUAmlyu07O5cv?mode=gi_t';
 
 const handleVipClick = () => {
   if (typeof window.fbq === 'function') {
